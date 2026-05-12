@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShowIntel — Early Access</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="product.html" class="nav-link">Product</a>
+      <a href="why.html" class="nav-link">Why ShowIntel</a>
+      <a href="integrations.html" class="nav-link">Integrations</a>
+      <a href="about.html" class="nav-link">About</a>
+    </div>
+    <a href="early-access.html" class="nav-cta">Early Access</a>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="product.html" class="nav-link">Product</a>
+  <a href="why.html" class="nav-link">Why ShowIntel</a>
+  <a href="integrations.html" class="nav-link">Integrations</a>
+  <a href="about.html" class="nav-link">About</a>
+  <a href="early-access.html" class="nav-cta">Early Access</a>
+</div>
+
+<main>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1 class="page-h1">Limited Early Access</h1>
+    <p class="page-sub">ShowIntel is currently in private development. Early access will open to listing teams in select markets. Spots are limited.</p>
+  </header>
+
+  <!-- Form -->
+  <section class="form-section">
+    <div class="form-wrap" id="form-container">
+      <div class="form-row">
+        <input id="first" type="text" class="form-input" placeholder="First name" autocomplete="given-name">
+        <input id="last"  type="text" class="form-input" placeholder="Last name"  autocomplete="family-name">
+      </div>
+      <div class="form-email">
+        <input id="email" type="email" class="form-input" placeholder="Email address" autocomplete="email">
+      </div>
+      <button id="submit-btn" class="btn-submit" type="button">Request Early Access</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">&copy; 2026 ShowIntel</footer>
+
+<script src="main.js"></script>
+<script>
+(function () {
+  var first  = document.getElementById('first');
+  var last   = document.getElementById('last');
+  var email  = document.getElementById('email');
+  var btn    = document.getElementById('submit-btn');
+  var wrap   = document.getElementById('form-container');
+
+  function validate() {
+    var ok = true;
+    [first, last, email].forEach(function (el) { el.classList.remove('err'); });
+
+    if (!first.value.trim()) { first.classList.add('err'); ok = false; }
+    if (!last.value.trim())  { last.classList.add('err');  ok = false; }
+    if (!email.value.trim() || !/^[^@\s]+@[^@\s.]+\.[^@\s]+$/.test(email.value.trim())) {
+      email.classList.add('err'); ok = false;
+    }
+    return ok;
+  }
+
+  btn.addEventListener('click', async function () {
+    if (!validate()) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+
+    var payload = {
+      first_name: first.value.trim(),
+      last_name:  last.value.trim(),
+      email:      email.value.trim()
+    };
+
+    try {
+      await Promise.all([
+        fetch('https://formspree.io/f/xojryqrd', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body:    JSON.stringify(payload)
+        }),
+        fetch('https://srnqophqdhkfmtmttwcm.supabase.co/rest/v1/interest_list', {
+          method:  'POST',
+          headers: {
+            'Content-Type':  'application/json',
+            'apikey':        'sb_publishable_3kMfFVvnsCXNnigHKTW7fA_i4N_62bV',
+            'Authorization': 'Bearer sb_publishable_3kMfFVvnsCXNnigHKTW7fA_i4N_62bV',
+            'Prefer':        'return=minimal'
+          },
+          body: JSON.stringify(payload)
+        })
+      ]);
+    } catch (err) {
+      console.error('Submission error:', err);
+    }
+
+    wrap.innerHTML =
+      '<div class="form-success">' +
+        '<p class="form-success-h">You are on the list.</p>' +
+        '<p class="form-success-sub">We will be in touch when early access opens in your market.</p>' +
+      '</div>';
+  });
+}());
+</script>
+</body>
+</html>
