@@ -371,27 +371,25 @@ ul { list-style: none; }
   color: var(--sub);
 }
 
-/* ── Integration Row (Home) ───────────────────────────── */
-.integration-row {
+/* ── Integration Strip (Home) ─────────────────────────── */
+.int-strip {
   padding: 0 32px 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 48px;
+  row-gap: 8px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--body);
 }
 
-.int-item img {
-  height: 28px;
-  width: auto;
-  filter: grayscale(1) opacity(0.4);
-}
-
-.int-item-text {
-  font-size: 14px;
-  font-weight: 500;
-  color: #C0BBB4;
-  letter-spacing: 0.02em;
+.int-sep {
+  color: var(--border);
+  margin: 0 14px;
+  user-select: none;
 }
 
 /* ── Page Header (Interior) ───────────────────────────── */
@@ -536,34 +534,9 @@ ul { list-style: none; }
   margin: 0 auto;
   padding: 56px 0;
   border-top: 1px solid var(--border);
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 32px;
-  align-items: start;
 }
 
 .int-block:first-child { border-top: none; }
-
-.int-block-logo {
-  display: flex;
-  align-items: flex-start;
-  padding-top: 6px;
-}
-
-.int-block-logo img {
-  height: 36px;
-  width: auto;
-}
-
-.int-logo-text {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text);
-  line-height: 1.2;
-  padding-top: 5px;
-}
-
-.int-logo-text.teal { color: var(--accent); }
 
 .int-block-name {
   font-family: var(--serif);
@@ -701,7 +674,7 @@ ul { list-style: none; }
   .chat-query-row { padding: 20px 24px 18px; }
   .chat-response  { padding: 24px; }
   .chat-bubble    { max-width: 90%; }
-  .integration-row { padding: 0 24px 80px; gap: 32px; }
+  .int-strip     { padding: 0 24px 80px; }
 
   .page-header { padding: 72px 24px 48px; }
   .feature-section { padding: 0 24px 64px; }
@@ -714,8 +687,6 @@ ul { list-style: none; }
   .why-section   { margin-bottom: 56px; }
 
   .int-list      { padding: 0 24px 80px; }
-  .int-block     { grid-template-columns: 1fr; gap: 16px; }
-  .int-block-logo { padding-top: 0; }
 
   .about-body  { padding: 0 24px 100px; }
 
