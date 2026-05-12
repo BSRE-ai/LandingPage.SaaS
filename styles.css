@@ -41,10 +41,6 @@ ul { list-style: none; }
   75%  { background-position: 50% 0%; }
   100% { background-position: 0% 50%; }
 }
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
 
 /* ── Navigation ─────────────────────────────────────── */
 .nav {
@@ -454,32 +450,6 @@ ul { list-style: none; }
   box-shadow: 0 4px 28px rgba(74, 144, 217, 0.1);
 }
 
-.feature-card.coming-soon {
-  opacity: 0.42;
-  grid-column: 1 / -1;
-  max-width: 460px;
-}
-
-.feature-card.coming-soon:hover {
-  background:
-    linear-gradient(var(--bg), var(--bg)) padding-box,
-    linear-gradient(135deg, transparent, transparent) border-box;
-  border-color: var(--border);
-  box-shadow: none;
-}
-
-.card-badge {
-  display: inline-block;
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--sub);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 3px 10px;
-  margin-bottom: 14px;
-}
 
 .card-title {
   font-family: var(--serif);
@@ -736,7 +706,6 @@ ul { list-style: none; }
   .page-header { padding: 72px 24px 48px; }
   .feature-section { padding: 0 24px 64px; }
   .feature-grid { grid-template-columns: 1fr; }
-  .feature-card.coming-soon { grid-column: 1; max-width: 100%; }
 
   .pillars     { padding: 0 24px 80px; }
   .pillar      { margin-bottom: 56px; }
