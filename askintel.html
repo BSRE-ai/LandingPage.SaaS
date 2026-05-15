@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ShowIntel</title>
+  <title>ShowIntel — AskIntel</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,9 +14,9 @@
 <nav class="nav">
   <div class="nav-inner">
     <div class="nav-links">
-      <a href="index.html" class="nav-link active">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="product.html" class="nav-link">Product</a>
-      <a href="askintel.html" class="nav-link nav-link-ai">AskIntel</a>
+      <a href="askintel.html" class="nav-link nav-link-ai active">AskIntel</a>
       <a href="why.html" class="nav-link">Why ShowIntel</a>
       <a href="integrations.html" class="nav-link">Integrations</a>
       <a href="about.html" class="nav-link">About</a>
@@ -29,9 +29,9 @@
 </nav>
 
 <div class="nav-mobile" id="nav-mobile">
-  <a href="index.html" class="nav-link active">Home</a>
+  <a href="index.html" class="nav-link">Home</a>
   <a href="product.html" class="nav-link">Product</a>
-  <a href="askintel.html" class="nav-link nav-link-ai">AskIntel</a>
+  <a href="askintel.html" class="nav-link nav-link-ai active">AskIntel</a>
   <a href="why.html" class="nav-link">Why ShowIntel</a>
   <a href="integrations.html" class="nav-link">Integrations</a>
   <a href="about.html" class="nav-link">About</a>
@@ -41,18 +41,26 @@
 <main>
 
   <!-- Hero -->
-  <section class="hero">
-    <span class="wordmark">ShowIntel</span>
-    <span class="hero-kicker">Total Pipeline Intelligence</span>
-    <p class="hero-descriptor">Listing intelligence for teams carrying serious active inventory.</p>
-    <h1 class="hero-headline">Your listings are talking. Are you listening?</h1>
-    <p class="hero-pain">Every listing in your inventory is telling you something. Most teams never hear it in time.</p>
-    <a href="early-access.html" class="btn">Request Early Access</a>
-  </section>
+  <header class="ai-hero">
+    <span class="label-gradient">AskIntel</span>
+    <h1 class="ai-hero-h">Your listings have answers. AskIntel finds them.</h1>
+    <p class="ai-hero-sub">AskIntel is the AI intelligence layer built into ShowIntel. Ask any question about your active inventory, your showing activity, or your team's pricing history — in plain English. Every answer comes from your team's own data.</p>
 
-  <!-- iMessage-style AskIntel Window -->
-  <section class="ichat-section">
-    <div class="ichat-window" data-ichat>
+    <div class="ai-divider-wrap">
+      <span class="ai-divider"></span>
+    </div>
+    <p class="ai-powered">Powered by <strong>Claude</strong></p>
+  </header>
+
+  <!-- Demo with starter chips -->
+  <section class="ai-demo-section">
+    <div class="prompt-chips">
+      <div class="prompt-chip"><span>Which listings need my attention this week?</span></div>
+      <div class="prompt-chip"><span>What is our SP/LP ratio above $1M?</span></div>
+      <div class="prompt-chip"><span>Which listings have zero showings in 10 days?</span></div>
+    </div>
+
+    <div class="ichat-window ichat-window-lg" data-ichat>
       <div class="ichat-header">
         <div class="ichat-avatar-sm">AI</div>
         <span class="ichat-title">AskIntel</span>
@@ -138,18 +146,81 @@
     </div>
   </section>
 
-  <!-- Integration Strip -->
-  <div class="int-strip">
-    <span>Microsoft Outlook</span>
-    <span class="int-sep">·</span>
-    <span>Follow Up Boss</span>
-    <span class="int-sep">·</span>
-    <span>Google Sheets</span>
-    <span class="int-sep">·</span>
-    <span>Google Calendar</span>
-    <span class="int-sep">·</span>
-    <span>Powered by Claude</span>
-  </div>
+  <!-- What it knows -->
+  <section class="ai-section">
+    <div class="ai-section-inner">
+      <span class="label-gradient">What It Knows</span>
+      <h2 class="ai-section-h">Role-aware. Data-grounded. Never guessing.</h2>
+      <div class="ai-section-body">
+        <p>AskIntel is not a general-purpose AI assistant. It operates exclusively within your team's ShowIntel data — active listing health, showing activity, seller relationship signals, pricing trends, and market comparisons. Every response is injected with your team's live data at query time. The AI never answers from general real estate knowledge when your data is available.</p>
+        <p>Access is role-aware. A showing agent sees showing-relevant answers. An agent sees their listings. A Team Leader sees the full portfolio. Role enforcement happens in the backend before any data reaches the AI — not in the prompt.</p>
+      </div>
+
+      <div class="ai-grid">
+        <div class="ai-grid-col">
+          <span class="ai-grid-col-label">Listing Intelligence</span>
+          <ul>
+            <li>Which listings are at risk this week?</li>
+            <li>What is the showing velocity trend on your actives?</li>
+            <li>Which listing is most likely to need a price reduction in the next two weeks?</li>
+            <li>How is a specific address performing compared to your team baseline?</li>
+          </ul>
+        </div>
+        <div class="ai-grid-col">
+          <span class="ai-grid-col-label">Showing Activity</span>
+          <ul>
+            <li>Which listings have repeat showings scheduled or completed?</li>
+            <li>Which listings have had zero showings in the last 10 days?</li>
+            <li>What is the feedback trend on a specific address?</li>
+            <li>Which showings are missing feedback?</li>
+          </ul>
+        </div>
+        <div class="ai-grid-col">
+          <span class="ai-grid-col-label">Market and Pricing</span>
+          <ul>
+            <li>What is your SP/LP ratio by ZIP code and price band?</li>
+            <li>How accurate were your last 10 pricing recommendations vs. final sale price?</li>
+            <li>What does your data show about Week 1 velocity for listings that closed under 30 days?</li>
+            <li>How does a proposed price compare to your recent closes in that ZIP and price band?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data moat -->
+  <section class="ai-section ai-section-cream">
+    <div class="ai-section-inner">
+      <span class="label-gradient">The Compounding Advantage</span>
+      <h2 class="ai-section-h">A competitor can copy the interface. They cannot copy your history.</h2>
+      <div class="ai-section-body">
+        <p>AskIntel gets smarter the longer your team runs ShowIntel. Every closing, every showing, every pricing outcome adds to your team's proprietary dataset. After 12 to 18 months, AskIntel's answers are calibrated to your specific market, your price bands, and your team's performance patterns.</p>
+        <p>No other team's data influences your answers. Ever. Your data is isolated, scoped, and owned entirely by your team's instance of ShowIntel.</p>
+      </div>
+
+      <p class="ai-pullquote">"ShowIntel shows the data. AskIntel tells you what it means."</p>
+    </div>
+  </section>
+
+  <!-- What it is not -->
+  <section class="ai-section">
+    <div class="ai-section-inner">
+      <span class="label-gradient">What It Is Not</span>
+      <div class="ai-not-statement">
+        <p>AskIntel is not a general-purpose chatbot. It does not answer questions outside real estate and your ShowIntel data. It is not a decision-maker — it surfaces recommendations and the team decides. It does not write to your CRM. It does not communicate with sellers. It does not replace the Team Leader's judgment.</p>
+        <p>It surfaces what the data says. The call is always yours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ai-section ai-section-cream">
+    <div class="ai-section-inner ai-cta">
+      <h2 class="ai-cta-h">AskIntel is included in ShowIntel's Scale tier.</h2>
+      <p class="ai-cta-sub">Early access teams will have AskIntel available from day one.</p>
+      <a href="early-access.html" class="btn">Request Early Access</a>
+    </div>
+  </section>
 
 </main>
 

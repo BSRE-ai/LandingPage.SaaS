@@ -6,7 +6,7 @@
   <title>ShowIntel — Integrations</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,6 +16,7 @@
     <div class="nav-links">
       <a href="index.html" class="nav-link">Home</a>
       <a href="product.html" class="nav-link">Product</a>
+      <a href="askintel.html" class="nav-link nav-link-ai">AskIntel</a>
       <a href="why.html" class="nav-link">Why ShowIntel</a>
       <a href="integrations.html" class="nav-link active">Integrations</a>
       <a href="about.html" class="nav-link">About</a>
@@ -30,6 +31,7 @@
 <div class="nav-mobile" id="nav-mobile">
   <a href="index.html" class="nav-link">Home</a>
   <a href="product.html" class="nav-link">Product</a>
+  <a href="askintel.html" class="nav-link nav-link-ai">AskIntel</a>
   <a href="why.html" class="nav-link">Why ShowIntel</a>
   <a href="integrations.html" class="nav-link active">Integrations</a>
   <a href="about.html" class="nav-link">About</a>
@@ -44,39 +46,91 @@
     <p class="page-sub">ShowIntel connects to your existing stack. No ripping and replacing.</p>
   </header>
 
-  <!-- Integration Blocks -->
-  <section class="int-list">
+  <!-- Spiderweb Diagram -->
+  <section class="diagram-section">
+    <div class="diagram-wrap">
 
-    <div class="int-block">
-      <p class="int-block-name">Microsoft Outlook</p>
-      <p class="int-block-desc">Calendar sync for every appointment booked in ShowIntel. Events are created, updated, and cancelled automatically.</p>
+      <svg class="diagram-svg" viewBox="0 0 720 520" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <defs>
+          <linearGradient id="diagramGradient" x1="0" y1="0" x2="720" y2="520" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"   stop-color="#4A90D9"/>
+            <stop offset="50%"  stop-color="#9B59B6"/>
+            <stop offset="100%" stop-color="#E8735A"/>
+          </linearGradient>
+        </defs>
+        <line class="diagram-line" pathLength="1" x1="360" y1="260" x2="360" y2="60"/>
+        <line class="diagram-line" pathLength="1" x1="360" y1="260" x2="550" y2="198"/>
+        <line class="diagram-line" pathLength="1" x1="360" y1="260" x2="477" y2="422"/>
+        <line class="diagram-line" pathLength="1" x1="360" y1="260" x2="243" y2="422"/>
+        <line class="diagram-line" pathLength="1" x1="360" y1="260" x2="170" y2="198"/>
+      </svg>
+
+      <!-- Center node -->
+      <div class="diagram-node diagram-node-center" style="left:50%; top:50%;">
+        <span class="diagram-node-name">ShowIntel</span>
+      </div>
+
+      <!-- Outer nodes -->
+      <div class="diagram-node diagram-node-outer" style="left:50%; top:11.5%;" data-tip="Calendar sync for every appointment. Created, updated, and cancelled automatically.">
+        <span class="diagram-node-name">Outlook</span>
+      </div>
+
+      <div class="diagram-node diagram-node-outer" style="left:76.4%; top:38.1%;" data-tip="Your CRM stays current. Showing activity and stage changes sync without manual entry.">
+        <span class="diagram-node-name">Follow Up Boss</span>
+      </div>
+
+      <div class="diagram-node diagram-node-outer" style="left:66.3%; top:81.2%;" data-tip="Closing data pulled automatically from your team's escrow sheet.">
+        <span class="diagram-node-name">Google Sheets</span>
+      </div>
+
+      <div class="diagram-node diagram-node-outer" style="left:33.7%; top:81.2%;" data-tip="Full calendar visibility across your team. Every appointment, every agent, one view.">
+        <span class="diagram-node-name">Google Calendar</span>
+      </div>
+
+      <div class="diagram-node diagram-node-outer diagram-node-ai" style="left:23.6%; top:38.1%;" data-tip="The AI intelligence layer. Ask your inventory anything. Powered by Claude.">
+        <span class="diagram-node-name">AskIntel</span>
+        <span class="diagram-node-sub">AI</span>
+      </div>
+
+      <div class="diagram-tooltip"></div>
     </div>
 
-    <div class="int-block">
-      <p class="int-block-name">Follow Up Boss</p>
-      <p class="int-block-desc">Your CRM stays current. Showing activity, notes, and stage changes sync without manual entry.</p>
+    <!-- Mobile vertical fallback -->
+    <div class="diagram-mobile">
+      <div class="int-block">
+        <p class="int-block-name">Microsoft Outlook</p>
+        <p class="int-block-desc">Calendar sync for every appointment. Created, updated, and cancelled automatically.</p>
+      </div>
+      <div class="int-block">
+        <p class="int-block-name">Follow Up Boss</p>
+        <p class="int-block-desc">Your CRM stays current. Showing activity and stage changes sync without manual entry.</p>
+      </div>
+      <div class="int-block">
+        <p class="int-block-name">Google Sheets</p>
+        <p class="int-block-desc">Closing data pulled automatically from your team's escrow sheet.</p>
+      </div>
+      <div class="int-block">
+        <p class="int-block-name">Google Calendar</p>
+        <p class="int-block-desc">Full calendar visibility across your team. Every appointment, every agent, one view.</p>
+      </div>
+      <div class="int-block">
+        <p class="int-block-name">AskIntel</p>
+        <p class="int-block-desc">The AI intelligence layer. Ask your inventory anything. Powered by Claude.</p>
+      </div>
     </div>
 
-    <div class="int-block">
-      <p class="int-block-name">Google Sheets</p>
-      <p class="int-block-desc">Closing data pulled automatically from your team's escrow sheet when a listing goes under contract.</p>
-    </div>
-
-    <div class="int-block">
-      <p class="int-block-name">Google Calendar</p>
-      <p class="int-block-desc">Full calendar visibility across your team. Every appointment, every agent, one view.</p>
-    </div>
-
-    <div class="int-block">
-      <p class="int-block-name">Powered by Claude</p>
-      <p class="int-block-desc">The AI layer behind ShowIntel's natural language insights. Your data. Anthropic's intelligence.</p>
-    </div>
-
+    <p class="diagram-footnote">ShowIntel is designed to connect to your existing stack. No ripping and replacing. No new workflows forced on your team.</p>
   </section>
 
 </main>
 
-<footer class="footer">&copy; 2026 ShowIntel</footer>
+<footer class="footer">
+  <span class="footer-copy">&copy; 2026 ShowIntel</span>
+  <div class="footer-contact">
+    <span class="footer-contact-line">Questions? Reach out directly.</span>
+    <a class="footer-mail" href="mailto:showintel.founder@gmail.com">showintel.founder@gmail.com</a>
+  </div>
+</footer>
 
 <script src="main.js"></script>
 </body>
